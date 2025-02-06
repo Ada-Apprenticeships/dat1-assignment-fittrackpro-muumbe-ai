@@ -1,5 +1,5 @@
 -- Initial SQLite setup
-.open fittrackpro.db
+.open fittrackpro.sqlite
 .mode column
 
 -- Enable foreign key support
@@ -8,6 +8,8 @@
 
 -- 1. Retrieve all members
 -- TODO: Write a query to retrieve all members
+SELECT *
+From members;
 
 -- 2. Update a member's contact information
 -- TODO: Write a query to update a member's contact information
