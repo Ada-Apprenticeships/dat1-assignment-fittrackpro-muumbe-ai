@@ -26,7 +26,9 @@ SELECT
 FROM attendance a
 JOIN memberships ms ON a.member_id = ms.member_id
 WHERE a.check_out_time IS NOT NULL
+AND strftime('%s', a.check_out_time) >= strftime('%s', a.check_in_time) -- Ensure no negative durations
 GROUP BY ms.type;
+
 
 -- 3. Identify members with expiring memberships this year
 -- TODO: Write a query to identify members with expiring memberships this year
