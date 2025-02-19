@@ -46,7 +46,7 @@ LIMIT 1;
 -- TODO: Write a query to calculate the percentage of members who have attended at least one class
 
 SELECT 
-    ROUND((COUNT(DISTINCT member_id) * 100.0 / (SELECT COUNT(*) FROM members)), 2) || '%' AS attendance_percentage
+    ROUND((COUNT(DISTINCT member_id) * 100.0 / (SELECT COUNT(*) FROM members)), 2) || '%' AS attendance_percentage  --Rounds to 2 DP
 FROM class_attendance
 WHERE attendance_status = 'Attended';
 
